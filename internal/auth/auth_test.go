@@ -1,4 +1,5 @@
 package auth
+
 import (
 	"net/http"
 	"testing"
@@ -13,10 +14,10 @@ func TestGetAPIKey(t *testing.T) {
 		errMessage string
 	}{
 		{
-			name:       "valid API key",
-			header:     http.Header{"Authorization": []string{"ApiKey abc123"}},
-			want:       "abc123",
-			wantErr:    false,
+			name:    "valid API key",
+			header:  http.Header{"Authorization": []string{"ApiKey abc123"}},
+			want:    "abc123",
+			wantErr: false,
 		},
 		{
 			name:       "missing header",
@@ -56,4 +57,3 @@ func TestGetAPIKey(t *testing.T) {
 		})
 	}
 }
-
